@@ -29,6 +29,8 @@ screenshot
 1- For outliers I remove some of outliers only not all outliers after invistgae it as some measures cna be outliers and other may be cause by wrong measurments.
 you will find it in section ```4.3 Outlier Detection``` 
 
+![Screenshot](pics/outlier.png)  
+
 2- Made Standard Scaler to the dataset
 
 # Exploratory Data analysis:  
@@ -37,11 +39,11 @@ you will find it in section ```4.3 Outlier Detection```
 -There are 2 seller_types dealer is more than individuals
 -There are 2 Transsimision types the Manual one is the hiegher
 **
-screen chot
+![Screenshot](pics/catdist.png)  
 
 2-Nmerical variables univariate analysis: 
 
-screen shot
+![Screenshot](pics/numdist.png)  
 **All the numerical variables is right skewed**
 
 3- Categorical Encoding
@@ -49,7 +51,7 @@ screen shot
 # First Experiment: 
 I made a basic linear Regression model and feed it the dataset and the results was good  
 which give me a R2-Score = 0.88%  
-screen shot 
+![Screenshot](pics/firstexp.png)    
 
 
 # Second Experiment:  
@@ -59,8 +61,8 @@ In second experiment I invistgate the Linear Regression Assumptions to try to in
 to detect the non linearity:**  
 **To investigate this assumption:**
 * **plots of actual vs. predicted values -> The desired output is that points is symmetric around the diagonal line**  
-* **plots of tesiduals vs. predicted values -> The desired outcome is that points are symetrically distributed around horizontal line**  
-screen shot 
+* **plots of tesiduals vs. predicted values -> The desired outcome is that points are symetrically distributed around horizontal line**    
+![Screenshot](pics/linearity.png)    
 
 **As we can see for the predicted vs. actual plot the it seems to be linear relation**  
 **But if we look at the residuals vs. predicted the points are not symmetric about the line and the line is not horizontal also**    
@@ -72,18 +74,20 @@ screen shot
 * **Check residuals histogram**   
 * **Quantile-Quantile probability plot -> plotting the residuals vs the order of statistic**  
 * **Anderson-Darling test**  
-screen shot  
+![Screenshot](pics/normality.png)      
+
 **In QQ Plot of residuals:**  
 * **The bow-shaped pattern of deviations from the diagonal implies that the residuals have excessive skewness.**
 * **The s-shaped pattern of deviations from the diagonal implies excessive kurtosis of the residuals (there are either too many or too few large errors in both directions.)**  
 
 ## 3-No Multicollinearity:  
 **Multicollinearity occurs when the independent variables are correlated to each other. It becomes difficult for the model to estimate the relationship between each independent variable and the dependent variable independently because the independent variables tend to change in unison. The coefficient estimates can swing wildly based on which other independent variables are in the model and they become very sensitive to small changes in the model. Therefore, the estimates will be less precise and highly sensitive to particular sets of data. This increases the standard error of the coefficients, which results in them potentially showing as statistically insignificant when they might actually be significant. On the other hand, the simultaneous changes of the independent variables can lead to large fluctuations of the target variable, which leads to the overfitting of the model and the reduction of its performance.**  
+![Screenshot](pics/multicolinearity.png)          
 
 **To investigate this assumption:**   
 * **Use a heatmap of the correlation**  
 * **Examine the variance inflation factor (VIF)**  
-screen shot  
+
 **The higher the value of VIF the higher correlation between this variable and the rest. A rule of thumb is that if VIF > 10 then multicollinearity is high.**  
 **Fuel_Type_Petrol is highly mutlicollinearity with others**  
 
@@ -96,8 +100,9 @@ screen shot
 * **Values < 1.5 indicate positive autocorrelation, values > 2.5 indicate negative autocorrelation**  
 
 ## 5-Homoscedasticity:  
-**Homoscedasticity means that the residuals doesn’t change across all the values of the target variable.**  
-screen   
+**Homoscedasticity means that the residuals doesn’t change across all the values of the target variable.**    
+![Screenshot](pics/homo.png)          
+
 **We can not see a fully uniform variance across our residuals because the orange line is not flat. The assumption is not satisfied.**  
 
 
@@ -106,7 +111,7 @@ screen
 **2-Make Box-Cox Transformtaion to the whole dataset to solve the Linearity assumption**  
 **3-By applying polynomial regression, we will try to improve the satisfaction of homoscedasticity and normality of residuals**  
 ### Results:  
-screen shots   
+![Screenshot](pics/test2.png)            
 
 **The model R2-Score increased to be 98.1% which is great improvments**  
 
