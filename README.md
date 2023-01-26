@@ -38,7 +38,8 @@ you will find it in section ```4.3 Outlier Detection```
 **-There are 3 fuel_types petrol>dessel>CNG
 -There are 2 seller_types dealer is more than individuals
 -There are 2 Transsimision types the Manual one is the hiegher
-**
+**  
+
 ![Screenshot](pics/catdist.png)  
 
 2-Nmerical variables univariate analysis: 
